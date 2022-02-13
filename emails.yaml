@@ -1,7 +1,27 @@
+# Google
 - email_account_1:
   name: kriszish lehtert
   email: kriszish.lehtert@gmail.com
   password: uj<,)52Sh$K]FFHd
   smtp: smtp.gmail.com
+  smtp_port: 587
   imap: null
+  imap_port: null
+# AOL
+- email_account_2:
+  name: darkroomboy
+  email: darkroom.boy07@aol.com
+  password: nfrumgkgghhxsqwx
+  smtp: smtp.aol.com
+  smtp_port: 587
+  imap: null
+  imap_port: null
 
+- email_account_3:
+  name: Christian.lehnert03
+  email: Christian.lehnert03@aol.com
+  password: sovkztwdgbscxoji
+  smtp: smtp.aol.com
+  smtp_port: 587
+  imap: null
+  imap_port: null
