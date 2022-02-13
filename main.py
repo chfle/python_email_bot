@@ -34,6 +34,7 @@ if __name__ == '__main__':
         \033[0m""")
         print("\033[91m OWNER: Christian Lehnert <https://github.com/chfle> \033[0m")
         print("\033[92m REPO: https://github.com/chfle/python_email_bot \033[0m")
+        print("\033[95m Version: 1.1.0 \033[0m")
         print("\n\n")
         try:
             data = yaml.load(f, Loader=yaml.Loader)
@@ -45,8 +46,8 @@ if __name__ == '__main__':
             # first ask for a bot receiver
             receiver = input("\033[93m \033[4mReceiver:\033[0m ")
 
-            subject = input("\033[93m \033Subject:\033[0m ")
-            message = input("\033[93m \033Message:\033[0m ")
+            subject = input("\033[93m \033[4mSubject:\033[0m ")
+            message = input("\033[93m \033[4mMessage:\033[0m ")
 
             if len(receiver) < 1:
                 print("No receiver added")
