@@ -34,3 +34,13 @@
   smtp_port: 587
   imap: null
   imap_port: null
+
+# yahoo
+- email_account_5:
+  name: Christian.lehnert03
+  email: christian.lehnert03@yahoo.com
+  password: jsczvnkodtcofvwx
+  smtp: smtp.mail.yahoo.com
+  smtp_port: 587
+  imap: null
+  imap_port: null
