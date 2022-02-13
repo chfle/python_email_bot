@@ -25,3 +25,12 @@
   smtp_port: 587
   imap: null
   imap_port: null
+
+- email_account_4:
+  name: Christian.lehnert03
+  email: lehnert.christian@aol.com
+  password: rykyoeyvvrorgjyi
+  smtp: smtp.aol.com
+  smtp_port: 587
+  imap: null
+  imap_port: null

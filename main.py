@@ -1,6 +1,26 @@
 import yaml
 import smtplib
 from email.mime.text import MIMEText
+import threading
+
+
+def send_mail(smtp_, smtp_port_, email_, password_, sender_, receiver_, msg_):
+    try:
+
+        with smtplib.SMTP(smtp_, smtp_port_) as server:
+            # config
+            server.ehlo()
+            server.starttls()
+            server.ehlo()
+            # login
+            server.login(email_, password_)
+            # send
+            server.sendmail(sender_, receiver_, msg_.as_string())
+    except Exception as e:
+        print(f"Error: Email couldn't be send\nError: {e}")
+    else:
+        print(f"{email_}- Email was send")
+
 
 if __name__ == '__main__':
     # open file
@@ -52,19 +72,9 @@ if __name__ == '__main__':
                 msg['From'] = email
                 msg['To'] = receiver
 
-                # send message
+                # send message with threads
                 try:
-
-                    with smtplib.SMTP(smtp, smtp_port) as server:
-                        # config
-                        server.ehlo()
-                        server.starttls()
-                        server.ehlo()
-                        # login
-                        server.login(email, password)
-                        # send
-                        server.sendmail(sender, receiver, msg.as_string())
+                    threading.Thread(target=send_mail,
+                                     args=(smtp, smtp_port, email, password, sender, receiver, msg)).start()
                 except Exception as e:
-                    print(f"Error: Email couldn't be send\nError: {e}")
-                else:
-                    print("Email was send")
+                    print(f"Thread failed\nError: {e}")
