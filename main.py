@@ -25,16 +25,28 @@ def send_mail(smtp_, smtp_port_, email_, password_, sender_, receiver_, msg_):
 if __name__ == '__main__':
     # open file
     with open("emails.yaml") as f:
+        print("""\033[92m              _____ __  __    _    ___ _         ____   ___ _____ 
+             | ____|  \/  |  / \  |_ _| |       | __ ) / _ \_   _|
+             |  _| | |\/| | / _ \  | || |       |  _ \| | | || |  
+             | |___| |  | |/ ___ \ | || |___    | |_) | |_| || |  
+             |_____|_|  |_/_/   \_\___|_____|___|____/ \___/ |_|  
+                                |Christian Lehnert|
+        \033[0m""")
+        print("\033[91m OWNER: Christian Lehnert <https://github.com/chfle> \033[0m")
+        print("\033[92m REPO: https://github.com/chfle/python_email_bot \033[0m")
+        print("\n\n")
         try:
             data = yaml.load(f, Loader=yaml.Loader)
         except Exception as e:
-            print(f"Email file not found\nError: {e}")
+            print(f"Email file not found\nError: {e}".center(80))
+
         else:
             # go over every account
             # first ask for a bot receiver
-            receiver = input("Add receiver: ")
-            subject = input('Add a subject: ')
-            message = input("Message: ")
+            receiver = input("\033[93m \033[4mReceiver:\033[0m ")
+
+            subject = input("\033[93m \033Subject:\033[0m ")
+            message = input("\033[93m \033Message:\033[0m ")
 
             if len(receiver) < 1:
                 print("No receiver added")
