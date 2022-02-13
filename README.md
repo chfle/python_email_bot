@@ -5,3 +5,19 @@
              | |___| |  | |/ ___ \ | || |___    | |_) | |_| || |  
              |_____|_|  |_/_/   \_\___|_____|___|____/ \___/ |_|  
                                 |by Christian Lehnert|
+
+## install
+
+```bash
+pip install pyyaml
+```
+
+## run
+
+```bash
+python3 main.py
+```
+
+## Config
+
+Edit `emails.yaml` to add emails.
